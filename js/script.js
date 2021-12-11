@@ -3,12 +3,6 @@ let appId = '05b9617826391d2a8dcd32bcfac800e4'  //API KEY HERE
 let units = 'metric'
 let searchMethod;
 
-// Go to the website below to add more stuff like pressure, coordinates, timezone
-
-//https://openweathermap.org/current#current_JSON
-
-
-
 function getSearchMethod(searchTerm){
     if(searchTerm.length === 5 && Number.parseInt(searchTerm) + '' === searchTerm){
         searchMethod='zip';
@@ -65,13 +59,14 @@ function init(resultFromServer){
     let day2 = document.getElementById('day2');
     let day3 = document.getElementById('day3');
     
+    //TODO Make date and 5 days forecast here
     //var date1 = moment(Date1).format('L');
 
 
     day1.innerHTML = 'DAY_1' + Math.floor(resultFromServer.main.temp) + '&#176C' + ' Winds ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
     day2.innerHTML = 'DAY_1' + Math.floor(resultFromServer.main.temp) + '&#176C' + ' Winds ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
     day3.innerHTML = 'DAY_1' + Math.floor(resultFromServer.main.temp) + '&#176C' + ' Winds ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
-    
+
     weatherIcon.src='https://openweathermap.org/img/w/' + resultFromServer.weather[0].icon + '.png';
 
     let resultDescription = resultFromServer.weather[0].description;
