@@ -60,8 +60,18 @@ function init(resultFromServer){
     let windSpeedElement = document.getElementById('windSpeed');
     let cityHeader = document.getElementById('cityHeader');
     let weatherIcon = document.getElementById('documentIconImg');
-    
 
+    let day1 = document.getElementById('day1');
+    let day2 = document.getElementById('day2');
+    let day3 = document.getElementById('day3');
+    
+    //var date1 = moment(Date1).format('L');
+
+
+    day1.innerHTML = 'DAY_1' + Math.floor(resultFromServer.main.temp) + '&#176C' + ' Winds ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
+    day2.innerHTML = 'DAY_1' + Math.floor(resultFromServer.main.temp) + '&#176C' + ' Winds ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
+    day3.innerHTML = 'DAY_1' + Math.floor(resultFromServer.main.temp) + '&#176C' + ' Winds ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
+    
     weatherIcon.src='https://openweathermap.org/img/w/' + resultFromServer.weather[0].icon + '.png';
 
     let resultDescription = resultFromServer.weather[0].description;
@@ -80,12 +90,18 @@ function init(resultFromServer){
 
 function setPositionForWeatherInfo(){
     let weatherContainer =document.getElementById('weatherContainer');
+    let daysContainer =document.getElementById('daysContainer');
+    
     let weatherContainerHeight = weatherContainer.clientHeight;
     let weatherContainerWidth = weatherContainer.clientWidth;
 
     weatherContainer.style.left =  `calc(50% - ${weatherContainerWidth/2}px)`;
     weatherContainer.style.top =  `calc(50% - ${weatherContainerHeight/1.3}px)`;
     weatherContainer.style.visibility = 'visible';
+
+    daysContainer.style.left =  `50px`;;
+    daysContainer.style.bottom =  '50px';
+    daysContainer.style.visibility = 'visible';
 }
 
 document.getElementById('searchBtn').addEventListener('click',() =>{

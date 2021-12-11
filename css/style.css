@@ -16,7 +16,16 @@ body{
     box-shadow: 1px 1px 5px black;
     padding: 50px;
     border-radius: 10px;
-    position:absolute;
+    /* position:absolute; */
+    position:initial;
+    visibility: hidden;
+}
+#daysContainer {
+    background-color: rgba(0,0,0,0.25);
+    box-shadow: 1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: auto;
     visibility: hidden;
 }
 
@@ -25,6 +34,7 @@ margin:5px;
 font-size: 42px;
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
 
 #searchContainer{
     padding:60px;
